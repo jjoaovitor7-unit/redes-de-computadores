@@ -19,7 +19,7 @@ while True:
     cliente = str(cliente).replace('(', '[')
     cliente = str(cliente).replace(')', ']')
     
-    print(conexao_horario, '[Conexão]', str(cliente))
+    print(conexao_horario, '[Conexão Realizada]', str(cliente))
     
     while True:
         msg = conn.recv(1024)
