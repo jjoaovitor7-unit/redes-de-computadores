@@ -31,6 +31,7 @@ try:
              verbose_ping_alvo = verbose_ping('127.0.0.1', count=4)
              verbose_ping_alvo = str(verbose_ping_alvo).replace('None', '------------')
              print(verbose_ping_alvo)
+             break
          elif verif == 'perda de pacote' or verif == 'perda de pacotes':
            print('-----------------------')
            print('Perda de Pacote (Teste)|')
