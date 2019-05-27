@@ -4,8 +4,8 @@ import socket
 import matplotlib.pyplot
 from ping3 import ping, verbose_ping
 
-HOST = '127.0.0.1' # Endereco IP do Servidor
-PORT = 8080        # Porta que o Servidor esta
+HOST = '127.0.0.1' # Endereço IP do Servidor
+PORT = 8080        # Porta que o Servidor está
 
 udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 dest = (HOST, PORT)
