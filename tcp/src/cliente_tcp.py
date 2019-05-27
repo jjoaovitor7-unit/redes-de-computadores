@@ -15,6 +15,7 @@ x_lista = []
 ping_lista = []
 
 print('Para sair use CTRL+C')
+print('Opções:\nping\nperda de pacote')
 msg = input('')
 msg = bytes(msg, 'utf8')
 
