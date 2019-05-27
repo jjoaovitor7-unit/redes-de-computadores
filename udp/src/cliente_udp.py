@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
+
 import socket
+import matplotlib.pyplot
 from ping3 import ping, verbose_ping
 
 HOST = '127.0.0.1' # Endereco IP do Servidor
