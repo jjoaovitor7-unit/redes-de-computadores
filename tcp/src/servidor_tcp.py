@@ -12,7 +12,9 @@ tcp.listen()
 
 while True:
     conn, cliente = tcp.accept()
-    print('Conectado por', cliente)
+    cliente = str(cliente).replace('(', '[')
+    cliente = str(cliente).replace(')', ']')
+    print('[Conexão]', str(cliente))
     while True:
         msg = conn.recv(1024)
         if not msg:
