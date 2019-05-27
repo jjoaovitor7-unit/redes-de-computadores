@@ -20,8 +20,10 @@ msg = bytes(msg, 'utf8')
 
 #http://condor.depaul.edu/sjost/lsp121/documents/ascii-npr.htm
 try:
+     
      while msg != '\x11':
          verif = msg.decode('utf8')
+     
          if verif == 'ping' or verif == 'Ping':
              print('----')
              print('Ping|')
@@ -32,30 +34,34 @@ try:
              verbose_ping_alvo = str(verbose_ping_alvo).replace('None', '------------')
              print(verbose_ping_alvo)
              break
+          
          elif verif == 'perda de pacote' or verif == 'perda de pacotes':
            print('-----------------------')
            print('Perda de Pacote (Teste)|')
            print('-----------------------')
-            
            x = 0
            int(x)
+               
            while True:
                x+=1
-               if x >= 0 and x <= 100:
+               
+               if x >= 0 and x <= 50:
                    ping_alvo = str(ping('127.0.0.1', unit='ms', size=56))
                    ping_lista.append(ping_alvo)
                    x_lista.append(x)
                    pacotes = (x, ping_alvo)
                    pacotes = bytes(str(pacotes), 'utf8')
                    print(pacotes)
-                   if x >= 100 and x <= 101:
+                    
+                   if x >= 50 and x <= 51:
                        matplotlib.pyplot.xlabel('Pacote (nº)')
                        matplotlib.pyplot.ylabel('Ping')
                        matplotlib.pyplot.plot(x_lista, ping_lista)
                        matplotlib.pyplot.show()
+                    
          else:
              udp.sendto(msg, dest)
-             msg = input()
+             msg = input('')
              msg = bytes(msg, 'utf8')
         
 except KeyboardInterrupt:
