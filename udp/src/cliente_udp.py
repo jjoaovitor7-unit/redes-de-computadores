@@ -1,4 +1,5 @@
 import socket
+from ping3 import ping, verbose_ping
 
 HOST = '127.0.0.1' # Endereco IP do Servidor
 PORT = 8080        # Porta que o Servidor esta
